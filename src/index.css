@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue-50: #f3f8ff;
+  --color-blue-100: #e3efff;
+  --color-blue-200: #cddfff;
+  --color-blue-300: #a8c8ff;
+  --color-blue-400: #7faeff;
+  --color-blue-500: #4f8fff;
+  --color-blue-600: #2f6fe0;
+  --color-blue-700: #2457b8;
+  --color-blue-800: #1a3f8f;
+  --color-blue-900: #122b63;
+  --color-blue-950: #0a1633;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom Scrollbar for Chat */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d05e71;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9d3142;
+}
