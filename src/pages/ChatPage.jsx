@@ -9,7 +9,10 @@ const ChatPage = () => {
   const { user } = ChatState();
 
   return (
-    <div className="w-full h-screen flex flex-col bg-blue-50 overflow-hidden">
+    <div
+      className="w-full h-screen flex flex-col overflow-hidden"
+      style={{ backgroundColor: "var(--bg-secondary)" }}
+    >
       {user && <SideDrawer />}
       <div className="flex flex-1 overflow-hidden p-4 gap-4">
         {user && <MyChats fetchAgain={fetchAgain} />}

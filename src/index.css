@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ─── Design Tokens ────────────────────────────────────────────────────────── */
+/* These CSS variables define the Electric Blue color palette.
+   Tailwind uses these via the @theme directive below. */
 @theme {
   --color-blue-50: #f3f8ff;
   --color-blue-100: #e3efff;
@@ -14,13 +17,55 @@
   --color-blue-950: #0a1633;
 }
 
-body {
-  font-family: "Inter", sans-serif;
+/* ─── Dark Mode CSS Variables ──────────────────────────────────────────────── */
+/* When the <html> element has data-theme="dark", all elements inside inherit
+   these overrides. Components check these vars via Tailwind's dark: prefix
+   and also via raw CSS where needed. */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f8ff;
+  --bg-chat: #eef2f7;
+  --text-primary: #122b63;
+  --text-secondary: #2457b8;
+  --border-color: #e3efff;
+  --bubble-mine: #1a3f8f;
+  --bubble-theirs: #ffffff;
+  --bubble-mine-text: #ffffff;
+  --bubble-theirs-text: #122b63;
+  --input-bg: #f3f8ff;
+  --header-bg: #ffffff;
+  --sidebar-bg: #ffffff;
 }
 
-/* Custom Scrollbar for Chat */
+[data-theme="dark"],
+.dark {
+  --bg-primary: #111827;      /* main dark background */
+  --bg-secondary: #1f2937;    /* slightly lighter panels */
+  --bg-chat: #0f172a;         /* darkest — the message area */
+  --text-primary: #f1f5f9;    /* near-white for readability */
+  --text-secondary: #93c5fd;  /* light blue for secondary text */
+  --border-color: #374151;    /* dark grey border */
+  --bubble-mine: #1d4ed8;     /* my messages: bright blue */
+  --bubble-theirs: #1f2937;   /* their messages: dark grey */
+  --bubble-mine-text: #ffffff;
+  --bubble-theirs-text: #e2e8f0;
+  --input-bg: #1f2937;
+  --header-bg: #1f2937;
+  --sidebar-bg: #111827;
+}
+
+/* ─── Typography ───────────────────────────────────────────────────────────── */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Custom Scrollbar ─────────────────────────────────────────────────────── */
+/* Styles the thin scrollbar in WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -28,10 +73,29 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d05e71;
+  background: #4f8fff;  /* Electric blue thumb */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9d3142;
+  background: #2457b8;
 }
+
+/* ─── Safe Area Padding for Mobile Notch/Home Bar ──────────────────────────── */
+/* Prevents content from being hidden behind the phone's home bar indicator */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 12px);
+}
+
+/* ─── Dark Mode Helper Classes ─────────────────────────────────────────────── */
+/* These use the CSS variables defined above so components don't need
+   to hardcode both light and dark versions of every colour */
+.dm-bg-primary    { background-color: var(--bg-primary); }
+.dm-bg-secondary  { background-color: var(--bg-secondary); }
+.dm-bg-chat       { background-color: var(--bg-chat); }
+.dm-text-primary  { color: var(--text-primary); }
+.dm-text-secondary{ color: var(--text-secondary); }
+.dm-border        { border-color: var(--border-color); }
+.dm-input-bg      { background-color: var(--input-bg); }
+.dm-header-bg     { background-color: var(--header-bg); }
+.dm-sidebar-bg    { background-color: var(--sidebar-bg); }
