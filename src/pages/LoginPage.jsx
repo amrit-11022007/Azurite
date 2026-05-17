@@ -36,14 +36,14 @@ const LoginPage = () => {
         const res = await axios.post(
           "/api/users/login",
           { email, password },
-          config
+          config,
         );
         data = res.data;
       } else {
         const res = await axios.post(
           "/api/users",
           { name, userid, email, password },
-          config
+          config,
         );
         data = res.data;
       }
@@ -58,8 +58,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-800 via-blue-900 to-black flex items-center justify-center p-4">
-      <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-8 w-full max-w-md transition-all duration-300 hover:shadow-blue-500/20">
+    <div className="bg-linear-to-br from-blue-800 via-blue-900 to-blackflex flex-1 overflow-hidden p-4 gap-4">
+      <div className="flex flex-col w-full md:w-1/3 rounded-3xl shadow-lg border overflow-hidden transition-all duration-300">
         <h1 className="text-4xl font-extrabold text-white text-center mb-8 tracking-tight">
           {isLogin ? "Welcome Back" : "Join Azurite"}
         </h1>
@@ -74,7 +74,9 @@ const LoginPage = () => {
           {!isLogin && (
             <>
               <div>
-                <label className="block text-blue-100 text-sm font-medium mb-2">Display Name</label>
+                <label className="block text-blue-100 text-sm font-medium mb-2">
+                  Display Name
+                </label>
                 <input
                   type="text"
                   placeholder="Your Full Name"
@@ -84,7 +86,9 @@ const LoginPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-blue-100 text-sm font-medium mb-2">User ID</label>
+                <label className="block text-blue-100 text-sm font-medium mb-2">
+                  User ID
+                </label>
                 <input
                   type="text"
                   placeholder="Unique User ID"
@@ -97,7 +101,9 @@ const LoginPage = () => {
           )}
 
           <div>
-            <label className="block text-blue-100 text-sm font-medium mb-2">Email Address</label>
+            <label className="block text-blue-100 text-sm font-medium mb-2">
+              Email Address
+            </label>
             <input
               type="email"
               placeholder="Enter your email"
@@ -108,7 +114,9 @@ const LoginPage = () => {
           </div>
 
           <div>
-            <label className="block text-blue-100 text-sm font-medium mb-2">Password</label>
+            <label className="block text-blue-100 text-sm font-medium mb-2">
+              Password
+            </label>
             <input
               type="password"
               placeholder="Enter your password"
@@ -137,6 +145,9 @@ const LoginPage = () => {
           </button>
         </p>
       </div>
+      <aside className="p-5 flex justify-between items-center border-b">
+        <img src="../public/LogoFull.png" />
+      </aside>
     </div>
   );
 };
