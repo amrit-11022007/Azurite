@@ -145,8 +145,13 @@ const LoginPage = () => {
           </button>
         </p>
       </div>
-      <aside className="p-5 flex justify-between items-center border-b">
+      <aside className="p-5 flex justify-between items-center flex-col gap-3 border-b md:h-full">
         <img src="/LogoFull.png" />
+        <section className="flex items-center justify-center">
+          <span className="text-blue-500 text-lg">
+            Enjoy talking with your loved ones
+          </span>
+        </section>
       </aside>
     </div>
   );
