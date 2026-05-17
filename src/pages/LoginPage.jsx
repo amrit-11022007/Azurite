@@ -58,8 +58,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="bg-linear-to-br from-blue-800 via-blue-900 to-blackflex flex-1 overflow-hidden p-4 gap-4">
-      <div className="flex flex-col w-full md:w-1/3 rounded-3xl shadow-lg border overflow-hidden transition-all duration-300">
+    <div className="bg-linear-to-br from-blue-800 via-blue-900 to-blackflex flex flex-1 flex-col overflow-hidden p-4 gap-4 md:flex-row">
+      <div className="flex flex-col w-full md:w-1/3 rounded-3xl shadow-lg border overflow-hidden transition-all duration-300 p-4">
         <h1 className="text-4xl font-extrabold text-white text-center mb-8 tracking-tight">
           {isLogin ? "Welcome Back" : "Join Azurite"}
         </h1>
@@ -146,7 +146,7 @@ const LoginPage = () => {
         </p>
       </div>
       <aside className="p-5 flex justify-between items-center border-b">
-        <img src="../public/LogoFull.png" />
+        <img src="/LogoFull.png" />
       </aside>
     </div>
   );
