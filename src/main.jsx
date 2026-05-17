@@ -8,6 +8,15 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://azurite-backend.onrender.com";
 
+// Register Service Worker for Push Notifications
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch((err) => {
+      console.error("Service Worker registration failed:", err);
+    });
+  });
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <ChatProvider>

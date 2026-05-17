@@ -1,16 +1,31 @@
-# React + Vite
+# Azurite 💬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time chat application built with WebSockets, featuring read receipts, profile pictures, and persistent connections.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Real-time messaging** — Instant message delivery using WebSockets, no polling
+- **Read receipts** — See when your messages have been read
+- **Profile pictures** — Upload and manage your avatar via Cloudinary
+- **Settings tab** — Customize your profile and preferences
+- **Connection persistence** — WebSocket connection is restored automatically on page refresh
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Frontend**
+
+- React + Vite
+- Tailwind CSS
+- Deployed on Vercel
+
+**Backend**
+
+- Node.js + Express
+- WebSocket (`ws`)
+- MongoDB
+- Cloudinary (image storage)
+- Deployed on Render
